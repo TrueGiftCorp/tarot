@@ -1,0 +1,123 @@
+<head>
+<title>Tarot</title>
+<link rel="icon" type="image/x-icon" href="images/tarot-icon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+    
+</head>
+<html>
+<body>
+
+<div class="title">
+<img src="images/tarot-title.png"></img>
+</div>
+
+<div class="page">
+<div class="moteur">
+<img id="randomImage" src="images/start.png" alt="start">
+<script>
+const images = [
+  "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
+  "rw02swords-r.jpg", "rw02swords.jpg", "rw02wands-r.jpg", "rw02wands.jpg",
+  "rw03cups-r.jpg", "rw03cups.jpg", "rw03pentacles-r.jpg", "rw03pentacles.jpg",
+  "rw03swords-r.jpg", "rw03swords.jpg", "rw03wands-r.jpg", "rw03wands.jpg",
+  "rw04cups.jpg", "rw04pentacles-r.jpg", "rw04pentacles.jpg", "rw04swords.jpg",
+  "rw04wands-r.jpg", "rw04wands.jpg", "rw05cups-r.jpg", "rw05cups.jpg",
+  "rw05pentacles-r.jpg", "rw05pentacles.jpg", "rw05swords-r.jpg", "rw05swords.jpg",
+  "rw05wands-r.jpg", "rw05wands.jpg", "rw06cups-r.jpg", "rw06cups.jpg",
+  "rw06pentacles-r.jpg", "rw06pentacles.jpg", "rw06swords-r.jpg", "rw06swords.jpg",
+  "rw06wands-r.jpg", "rw06wands.jpg", "rw07cups-r.jpg", "rw07cups.jpg",
+  "rw07pentacles-r.jpg", "rw07pentacles.jpg", "rw07swords-r.jpg", "rw07swords.jpg",
+  "rw07wands-r.jpg", "rw07wands.jpg", "rw08pentacles-r.jpg", "rw08pentacles.jpg",
+  "rw08swords-r.jpg", "rw08swords.jpg", "rw08wands-r.jpg", "rw08wands.jpg",
+  "rw09cups-r.jpg", "rw09cups.jpg", "rw09pentacles-r.jpg", "rw09pentacles.jpg",
+  "rw09swords-r.jpg", "rw09swords.jpg", "rw09wands-r.jpg", "rw09wands.jpg",
+  "rw10cups-r.jpg", "rw10cups.jpg", "rw10pentacles-r.jpg", "rw10pentacles.jpg",
+  "rw10swords-r.jpg", "rw10swords.jpg", "rw10wands-r.jpg", "rw10wands.jpg",
+  "rwacecups-r.jpg", "rwacecups.jpg", "rwacepentacles-r.jpg", "rwacepentacles.jpg",
+  "rwaceswords-r.jpg", "rwaceswords.jpg", "rwacewands-r.jpg", "rwacewands.jpg",
+  "rwchariot-r.jpg", "rwchariot.jpg", "rwdeath-r.jpg", "rwdeath.jpg",
+  "rwdevil-r.jpg", "rwdevil.jpg", "rwemperor-r.jpg", "rwemperor.jpg",
+  "rwempress-r.jpg", "rwempress.jpg", "rwfool-r.jpg", "rwfool.jpg",
+  "rwhangedman-r.jpg", "rwhangedman.jpg", "rwhermit-r.jpg", "rwhermit.jpg",
+  "rwhierophant-r.jpg", "rwhierophant.jpg", "rwhighpriestess-r.jpg", "rwhighpriestess.jpg",
+  "rwjugement-r.jpg", "rwjugement.jpg", "rwjustice-r.jpg", "rwjustice.jpg",
+  "rwkingcups-r.jpg", "rwkingcups.jpg", "rwkingpentacles-r.jpg", "rwkingpentacles.jpg",
+  "rwkingswords-r.jpg", "rwkingswords.jpg", "rwkingwands-r.jpg", "rwkingwands.jpg",
+  "rwknightcups-r.jpg", "rwknightcups.jpg", "rwknightpentacles-r.jpg", "rwknightpentacles.jpg",
+  "rwknightswords-r.jpg", "rwknightswords.jpg", "rwknightwands-r.jpg", "rwknightwands.jpg",
+  "rwlovers-r.jpg", "rwlovers.jpg", "rwmagician-r.jpg", "rwmagician.jpg",
+  "rwmoon-r.jpg", "rwmoon.jpg", "rwpagecups-r.jpg", "rwpagecups.jpg",
+  "rwpagepentacles-r.jpg", "rwpagepentacles.jpg", "rwpageswords-r.jpg", "rwpageswords.jpg",
+  "rwpagewands-r.jpg", "rwpagewands.jpg", "rwqueencups-r.jpg", "rwqueencups.jpg",
+  "rwqueenpentacles-r.jpg", "rwqueenpentacles.jpg", "rwqueenswords-r.jpg", "rwqueenswords.jpg",
+  "rwqueenwands-r.jpg", "rwqueenwands.jpg", "rwstar-r.jpg", "rwstar.jpg",
+  "rwstrength-r.jpg", "rwstrength.jpg", "rwsun-r.jpg", "rwsun.jpg",
+  "rwtemperance-r.jpg", "rwtemperance.jpg", "rwtower-r.jpg", "rwtower.jpg",
+  "rwwheelfortune-r.jpg", "rwwheelfortune.jpg", "rwworld-r.jpg", "rwworld.jpg"
+];                    
+function getRandomImage() {
+const randomIndex = Math.floor(Math.random() * images.length);
+document.getElementById("randomImage").src = `tarotcards/${images[randomIndex]}`;
+}
+</script>
+<br>
+<button onclick="getRandomImage()">LOAD</button>
+<br>
+</div>   
+</div> 
+
+<div class="truegiftcorp">
+<a href="https://www.instagram.com/truegiftcorp" target="_blank"> powered by truegiftcorp</a>
+</div>
+
+</body>
+</html>
+    
+<style>
+body{
+background: url('images/background.gif') #3e3437 repeat 0px 0px;
+}
+.title {
+text-align: center;
+margin: -20px auto -34px;
+}
+.title img{
+width: 333px;
+height: 111px;
+text-align: center;
+}
+.page{
+width: auto; 
+text-align: center;
+color: white;
+margin: 1px auto 1px;
+}
+.page img{
+width: 555px;
+text-align: center;
+color: white;
+margin: 10px auto 20px;
+font-size: 51px;
+}
+.moteur img{
+width: 150px;
+height: 257px;
+outline: solid #3f27bb 3px;   
+} 
+button{
+width: 100px;
+height: 30px;
+margin: 10px auto 0px;
+color: rgb(255, 255, 255);
+background-color: #907def;
+font-weight: bold;
+} 
+.truegiftcorp{
+text-align: center;
+margin: 222px auto 10px;
+}
+.truegiftcorp a{
+color: white;
+}
+</style>
+    
