@@ -17,7 +17,7 @@
 
 <div class="page">
 <div class="moteur">
-<a onclick="getRandomImage()"><img id="randomImage" src="images/start13th.png"></a>
+<a onclick="getCard()"><img id="card" src="images/start13th.png" alt="card"></a>
 <script>
 const images = [
   "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
@@ -59,9 +59,9 @@ const images = [
   "rwtemperance-r.jpg", "rwtemperance.jpg", "rwtower-r.jpg", "rwtower.jpg",
   "rwwheelfortune-r.jpg", "rwwheelfortune.jpg", "rwworld-r.jpg", "rwworld.jpg"
 ];                    
-function getRandomImage() {
+function getCard() {
 const randomIndex = Math.floor(Math.random() * images.length);
-document.getElementById("randomImage").src = `tarotcards/${images[randomIndex]}`;
+document.getElementById("card").src = `tarotcards/${images[randomIndex]}`;
 }
 </script>
 <br>
@@ -103,11 +103,18 @@ text-align: center;
 color: white;
 margin: 21px auto 20px;
 font-size: 51px;
+
 }
 .moteur img{
 width: 150px;
 height: 300px;
 box-shadow: 0px 0px 15px 14px rgba(138,53,0,0.9);
+animation: fadeIn 3s;
 }
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
 </style>
     
