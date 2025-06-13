@@ -1,5 +1,5 @@
 <head>
-<title>Tarot</title>
+<title>Tarot - Special friday 13th</title>
 <link rel="icon" type="image/x-icon" href="images/tarot-icon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0;">
 </head>
@@ -8,21 +8,16 @@
 <body>
 
 <div class="title">
-<img src="images/tarot-title.png">
+<img src="images/tarot-title13th.png">
 </div>
 
 <div class="info">
-<a>Ask something, I will help you find the answer.</a>
-<br>
-<a>Example:</a>
-<br>
-<a>How will my day go ?</a>
 <br>
 </div>
 
 <div class="page">
 <div class="moteur">
-<a onclick="getRandomImage()"><img id="randomImage" src="images/start.png"></a>
+<a onclick="getRandomImage()"><img id="randomImage" src="images/start13th.png"></a>
 <script>
 const images = [
   "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
@@ -78,7 +73,7 @@ document.getElementById("randomImage").src = `tarotcards/${images[randomIndex]}`
     
 <style>
 body{
-background: url('images/background.gif') #3e3437 repeat 0px 0px;
+background: url('images/background-friday13th.gif') #3e3437 repeat 0px 0px;
 }
 .title {
 text-align: center;
@@ -112,7 +107,7 @@ font-size: 51px;
 .moteur img{
 width: 150px;
 height: 300px;
-outline: solid #3f27bb 3px;   
+box-shadow: 0px 0px 15px 14px rgba(138,53,0,0.9);
 }
 </style>
     
