@@ -8,7 +8,7 @@
 <body>
 
 <div class="title">
-<a href="index.html"><img src="images/tarot-title.png"></a>
+<img src="images/tarot-title.png">
 </div>
 
 <div class="info">
@@ -17,7 +17,7 @@
 
 <div class="page">
 <div class="moteur">
-<img id="randomImage" src="images/start.png">
+<a onclick="getRandomImage()"><img id="randomImage" src="images/start.png"></a>
 <script>
 const images = [
   "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
@@ -65,7 +65,6 @@ document.getElementById("randomImage").src = `tarotcards/${images[randomIndex]}`
 }
 </script>
 <br>
-<button onclick="getRandomImage()">LOAD</button>
 <br>
 </div>   
 </div> 
@@ -102,21 +101,13 @@ margin: 1px auto 1px;
 width: 555px;
 text-align: center;
 color: white;
-margin: 10px auto 20px;
+margin: 34px auto 20px;
 font-size: 51px;
 }
 .moteur img{
 width: 150px;
 height: 300px;
 outline: solid #3f27bb 3px;   
-} 
-button{
-width: 100px;
-height: 30px;
-margin: 10px auto 0px;
-color: rgb(255, 255, 255);
-background-color: #907def;
-font-weight: bold;
-} 
+}
 </style>
     
