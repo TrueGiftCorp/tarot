@@ -2,6 +2,7 @@
 <title>Tarot</title>
 <link rel="icon" type="image/x-icon" href="images/tarot-icon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+<meta charset="UTF-8">
 </head>
 
 <html>
@@ -16,14 +17,33 @@
 <br>
 <a>Example:</a>
 <br>
-<a>How will my day go ?</a>
+<a id="example"></a>
 <br>
 </div>
 
 <div class="page">
 <div class="moteur">
 <a onclick="getCard()"><img id="card" src="images/start.png"></a>
+
 <script>
+const messageElement = document.getElementById("example");
+const maintenant = new Date();
+const heure = maintenant.getHours();
+
+let message = "";
+
+if (heure >= 6 && heure < 12) {
+message = "How will my day go ? ☀️";
+} else if (heure >= 12 && heure < 18) {
+message = "What's planned for me this afternoon 🌤️";
+} else if (heure >= 18 && heure < 22) {
+message = "What's going to happen this evening ?";
+} else {
+message = "How will my night go ? 🌙";
+}
+
+messageElement.textContent = message;
+
 const images = [
   "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
   "rw02swords-r.jpg", "rw02swords.jpg", "rw02wands-r.jpg", "rw02wands.jpg",
@@ -69,6 +89,7 @@ const randomIndex = Math.floor(Math.random() * images.length);
 document.getElementById("card").src = `tarotcards/${images[randomIndex]}`;
 }
 </script>
+
 <br>
 <br>
 </div>   
