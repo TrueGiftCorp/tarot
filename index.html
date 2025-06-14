@@ -22,7 +22,7 @@
 
 <div class="page">
 <div class="moteur">
-<a onclick="getRandomImage()"><img id="randomImage" src="images/start.png"></a>
+<a onclick="getCard()"><img id="card" src="images/start.png"></a>
 <script>
 const images = [
   "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
@@ -64,9 +64,9 @@ const images = [
   "rwtemperance-r.jpg", "rwtemperance.jpg", "rwtower-r.jpg", "rwtower.jpg",
   "rwwheelfortune-r.jpg", "rwwheelfortune.jpg", "rwworld-r.jpg", "rwworld.jpg"
 ];                    
-function getRandomImage() {
+function getCard() {
 const randomIndex = Math.floor(Math.random() * images.length);
-document.getElementById("randomImage").src = `tarotcards/${images[randomIndex]}`;
+document.getElementById("card").src = `tarotcards/${images[randomIndex]}`;
 }
 </script>
 <br>
