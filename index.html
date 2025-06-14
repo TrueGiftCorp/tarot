@@ -26,21 +26,56 @@
 <a onclick="getCard()"><img id="card" src="images/start.png"></a>
 
 <script>
+
 const messageElement = document.getElementById("example");
 const maintenant = new Date();
 const heure = maintenant.getHours();
 
+// Définir des messages pour chaque tranche horaire
+const messages = {
+matin: [
+"How will my day go ? ☀️",
+"Give me an advice to start my day",
+"What will happen today ?"
+],
+apresMidi: [
+"What's planned for me this afternoon 🌞",
+"how will my afternoon go ? 🌞",
+"How to have success in my work today ? 🛠️"
+],
+soir: [
+"What's going to happen this evening ?",
+"Any question",
+"Give me an advice for tonight"
+],
+nuit: [
+"How will my night go ? 🌙",
+"How to make my dreams come true ? ✨",
+"How to make my wishes come true ? ✨"
+]
+};
+
+// Fonction pour choisir un message aléatoire dans une liste
+function choisirMessageAleatoire(liste) {
+const index = Math.floor(Math.random() * liste.length);
+return liste[index];
+}
+
 let message = "";
 
+// Choisir les messages selon l'heure
 if (heure >= 6 && heure < 12) {
-message = "How will my day go ? ☀️";
+message = choisirMessageAleatoire(messages.matin);
 } else if (heure >= 12 && heure < 18) {
-message = "What's planned for me this afternoon 🌤️";
+message = choisirMessageAleatoire(messages.apresMidi);
 } else if (heure >= 18 && heure < 22) {
-message = "What's going to happen this evening ?";
+message = choisirMessageAleatoire(messages.soir);
 } else {
-message = "How will my night go ? 🌙";
+message = choisirMessageAleatoire(messages.nuit);
 }
+
+// Afficher le message
+messageElement.textContent = message;
 
 messageElement.textContent = message;
 
