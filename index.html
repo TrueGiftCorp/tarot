@@ -1,5 +1,5 @@
 <head>
-<title>Tarot - Special friday 13th</title>
+<title>Tarot</title>
 <link rel="icon" type="image/x-icon" href="images/tarot-icon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0;">
 </head>
@@ -8,16 +8,21 @@
 <body>
 
 <div class="title">
-<img src="images/tarot-title13th.png">
+<img src="images/tarot-title.png">
 </div>
 
 <div class="info">
+<a>Ask something, I will help you find the answer.</a>
+<br>
+<a>Example:</a>
+<br>
+<a>How will my day go ?</a>
 <br>
 </div>
 
 <div class="page">
 <div class="moteur">
-<a onclick="getCard()"><img id="card" src="images/start13th.png" alt="card"></a>
+<a onclick="getRandomImage()"><img id="randomImage" src="images/start.png"></a>
 <script>
 const images = [
   "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
@@ -59,9 +64,9 @@ const images = [
   "rwtemperance-r.jpg", "rwtemperance.jpg", "rwtower-r.jpg", "rwtower.jpg",
   "rwwheelfortune-r.jpg", "rwwheelfortune.jpg", "rwworld-r.jpg", "rwworld.jpg"
 ];                    
-function getCard() {
+function getRandomImage() {
 const randomIndex = Math.floor(Math.random() * images.length);
-document.getElementById("card").src = `tarotcards/${images[randomIndex]}`;
+document.getElementById("randomImage").src = `tarotcards/${images[randomIndex]}`;
 }
 </script>
 <br>
@@ -73,7 +78,7 @@ document.getElementById("card").src = `tarotcards/${images[randomIndex]}`;
     
 <style>
 body{
-background: url('images/background-friday13th.gif') #3e3437 repeat 0px 0px;
+background: url('images/background.gif') #3e3437 repeat 0px 0px;
 }
 .title {
 text-align: center;
@@ -103,13 +108,14 @@ text-align: center;
 color: white;
 margin: 21px auto 20px;
 font-size: 51px;
-
 }
 .moteur img{
 width: 150px;
 height: 300px;
-box-shadow: 0px 0px 15px 14px rgba(138,53,0,0.9);
-animation: fadeIn 3s;
+outline: solid #3f27bb 3px;  
+box-shadow: 0px 0px 15px 14px #3f27bb;
+
+animation: fadeIn 3s; 
 }
 @keyframes fadeIn {
 0% { opacity: 0; }
