@@ -23,8 +23,7 @@
 
 <div class="page">
 <div class="moteur">
-<a onclick="getCard(),playAudio()"><img id="card" src="images/start.png"></a>
-<audio id="audio" src="audio/fx3.mp3"></audio>
+<a onclick="getCard(),playSound()"><img id="card" src="images/start.png"></a>
 <script>
 
 const messageElement = document.getElementById("example");
@@ -123,8 +122,9 @@ function getCard() {
 const randomIndex = Math.floor(Math.random() * images.length);
 document.getElementById("card").src = `tarotcards/${images[randomIndex]}`;
 }
-function playAudio() {
-var audio = document.getElementById("audio");
+function playSound() {
+var audio = new Audio('audio/tarotengine-sound-fx.mp3');
+audio.volume = 0.2;
 audio.play();
 }
 </script>
