@@ -23,8 +23,8 @@
 
 <div class="page">
 <div class="moteur">
-<a onclick="getCard()"><img id="card" src="images/start.png"></a>
-
+<a onclick="getCard(),playAudio()"><img id="card" src="images/start.png"></a>
+<audio id="audio" src="audio/fx3.mp3"></audio>
 <script>
 
 const messageElement = document.getElementById("example");
@@ -56,7 +56,7 @@ nuit: [
 };
 
 // Fonction pour choisir un message aléatoire dans une liste
-function choisirMessageAleatoire(liste) {
+function RandomMessage(liste) {
 const index = Math.floor(Math.random() * liste.length);
 return liste[index];
 }
@@ -65,13 +65,13 @@ let message = "";
 
 // Choisir les messages selon l'heure
 if (heure >= 6 && heure < 12) {
-message = choisirMessageAleatoire(messages.matin);
+message = RandomMessage(messages.matin);
 } else if (heure >= 12 && heure < 18) {
-message = choisirMessageAleatoire(messages.apresMidi);
+message = RandomMessage(messages.apresMidi);
 } else if (heure >= 18 && heure < 22) {
-message = choisirMessageAleatoire(messages.soir);
+message = RandomMessage(messages.soir);
 } else {
-message = choisirMessageAleatoire(messages.nuit);
+message = RandomMessage(messages.nuit);
 }
 
 // Afficher le message
@@ -122,6 +122,10 @@ const images = [
 function getCard() {
 const randomIndex = Math.floor(Math.random() * images.length);
 document.getElementById("card").src = `tarotcards/${images[randomIndex]}`;
+}
+function playAudio() {
+var audio = document.getElementById("audio");
+audio.play();
 }
 </script>
 
