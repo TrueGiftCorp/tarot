@@ -7,77 +7,24 @@
 
 <html>
 <body>
-
+<div class="clock "id="clock"></div>
 <div class="title">
 <img src="images/tarot-title.png">
 </div>
-
 <div class="info">
 <a>Ask something, I will help you find the answer.</a>
 <br>
 <a>Example:</a>
 <br>
-<a id="example"></a>
+<a id="message"></a>
 <br>
 </div>
 
 <div class="page">
 <div class="moteur">
-<a onclick="getCard(),playSound()"><img id="card" src="images/start.png"></a>
+<a onclick="getCard(),playSound(),getMesssage()"><img id="card" src="images/start.png"></a>
+
 <script>
-
-const messageElement = document.getElementById("example");
-const maintenant = new Date();
-const heure = maintenant.getHours();
-
-// Définir des messages pour chaque tranche horaire
-const messages = {
-matin: [
-"How will my day go ? ☀️",
-"Give me an advice to start my day",
-"What will happen today ?"
-],
-apresMidi: [
-"What's planned for me this afternoon 🌞",
-"how will my afternoon go ? 🌞",
-"How to have success in my work today ? 🛠️"
-],
-soir: [
-"What's going to happen this evening ?",
-"Any question",
-"Give me an advice for tonight"
-],
-nuit: [
-"How will my night go ? 🌙",
-"How to make my dreams come true ? ✨",
-"How to make my wishes come true ? ✨"
-]
-};
-
-// Fonction pour choisir un message aléatoire dans une liste
-function RandomMessage(liste) {
-const index = Math.floor(Math.random() * liste.length);
-return liste[index];
-}
-
-let message = "";
-
-// Choisir les messages selon l'heure
-if (heure >= 6 && heure < 12) {
-message = RandomMessage(messages.matin);
-} else if (heure >= 12 && heure < 18) {
-message = RandomMessage(messages.apresMidi);
-} else if (heure >= 18 && heure < 22) {
-message = RandomMessage(messages.soir);
-} else {
-message = RandomMessage(messages.nuit);
-}
-
-// Afficher le message
-messageElement.textContent = message;
-
-messageElement.textContent = message;
-
 const images = [
   "rw02cups-r.jpg", "rw02cups.jpg", "rw02pentacles-r.jpg", "rw02pentacles.jpg",
   "rw02swords-r.jpg", "rw02swords.jpg", "rw02wands-r.jpg", "rw02wands.jpg",
@@ -127,6 +74,62 @@ var audio = new Audio('audio/tarotengine-sound-fx.mp3');
 audio.volume = 0.2;
 audio.play();
 }
+const messageElement = document.getElementById("message");
+const messages = {
+morning: [
+"How will my day go ? ☀️",
+"Give me an advice to start my day",
+"What will happen today ?"
+],
+afternoon: [
+"What's planned for me this afternoon 🌞",
+"how will my afternoon go ? 🌞",
+"How to have success in my work today ? 🛠️"
+],
+evening: [
+"What's going to happen this evening ?",
+"Any question",
+"Give me an advice for tonight"
+],
+night: [
+"How will my night go ? 🌙",
+"How to make my dreams come true ? ✨",
+"How to make my wishes come true ? ✨"
+]
+};
+function getRandomMessage(list) {
+const index = Math.floor(Math.random() * list.length);
+return list[index];
+}
+function getMesssage() {
+const date = new Date();
+const hour = date.getHours();
+let message = "";
+if(hour >= 6 && hour < 12){
+message = getRandomMessage(messages.morning);
+}else if(hour >= 12 && hour < 18){
+message = getRandomMessage(messages.afternoon);
+}else if(hour >= 18 && hour < 22){
+message = getRandomMessage(messages.evening);
+}else{
+message = getRandomMessage(messages.night);
+}
+messageElement.textContent = message;
+}
+window.addEventListener("load", getMesssage);
+function getClock() {
+const date = new Date();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+hours = hours < 10 ? "0" + hours : hours;
+minutes = minutes < 10 ? "0" + minutes : minutes;
+seconds = seconds < 10 ? "0" + seconds : seconds;
+const time = hours + ":" + minutes + ":" + seconds;
+document.getElementById("clock").textContent = time;
+}
+setInterval(getClock, 1000);
+getClock();
 </script>
 
 <br>
@@ -140,6 +143,11 @@ audio.play();
 body{
 background: url('images/background.gif') #3e3437 repeat 0px 0px;
 }
+.clock{
+text-align: center;
+color: white;
+margin: 20px auto -20px;
+}
 .title {
 text-align: center;
 margin: -20px auto -34px;
@@ -151,6 +159,7 @@ text-align: center;
 }
 .info{
 text-align: center;
+color:white;
 }
 .info a{
 color: white;
@@ -181,6 +190,5 @@ animation: fadeIn 3s;
 0% { opacity: 0; }
 100% { opacity: 1; }
 }
-
 </style>
     
